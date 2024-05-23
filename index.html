@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0
+        }
+        body, html{
+            height: 100%;
+            scroll-behavior: smooth;
+            overflow-x:hidden
+        }#slide1{
+            background-image: url('images/Yonex-All_England.avif');
+            background-size: cover;
+            background-position: center;
+        }
+        #slide2{
+            background-image: url('images/Ghost-messaging.avif');
+            background-size: cover;
+            background-position: center;
+        }
+        #slide3{
+            background-image: url('images/Meridian-Book_Design.avif');
+            background-size: cover;
+            background-position: center;
+        }
+        #slide4{
+            background-image: url('images/babettes.avif');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class = "">
+    <!-- Canvas Container -->
+    <!-- <div class="absolute inset-0 flex justify-center items-center">
+        <div class="text-7xl text-center text-white relative">
+            <div id = "title-1">We are a brand</div>
+            <div class = "relative transform translate-x-20" id = "title-2">of collective</div>
+            <div class = "" id = "title-3">creativity</div>
+        </div>
+    </div> -->
+    <div class =  "absolute opacity-0 top-40 left-16 text-white z-40 font-serif pointer-events-none" id = "work-cover">
+        <div class = "text-xs pb-2">RECENT WORK</div>
+        <div class = "text-3xl" id = "work-title">YONEX ALL ENGLAND</div>
+    </div>
+    <div id="dot" class="absolute flex flex-col rounded-full bg-white z-[40] text-black justify-center items-center text-[0px] pointer-events-none">
+        <div class="block w-full text-center">View</div>
+        <div class="block w-full text-center">Case Study</div>
+        <div class="block w-full text-center">-&gt;</div>
+    </div>
+    <!-- TopMostUIBar -->
+    <div class="absolute top-0 left-0 w-full bg-gray-800 bg-opacity-10 text-white p-4 max-h-24 h-full mb-0 flex z-50" id = "top-ui">
+        <div class = "pr-40"><span class = "text-lg">monopo</span> | <span class = "text-xs">london</span></div>
+        <div class="text-white p-4 flex justify-center items-center gap-40 pt-0">
+            <div class = "text-xs cursor-pointer">
+                <div class = "hover-triangle" data-index ="0">HOME</div>
+                <div class = "hover-triangle" data-index ="1">WORK</div>
+                <div class = "hover-triangle" data-index ="2">SERVICES</div>
+            </div>
+            <div class = "text-xs cursor-pointer">
+                <div class = "hover-triangle" data-index ="3">TEAM</div>
+                <div class = "hover-triangle" data-index ="4">CONTACT</div>
+                <div class = "hover-triangle" data-index ="5">PRESS & NEWS</div>
+            </div>
+            <div class = "text-xs cursor-pointer">
+                <div class = "hover-triangle" data-index ="6">02:16 PM</div>
+                <div class = "hover-triangle" data-index ="7">10:16 PM</div>
+                <div class = "hover-triangle" data-index ="8">09:16 AM</div>
+            </div>
+        </div>
+    </div>
+    <!-- Bottom UI Bar -->
+    <div class="fixed bottom-0 left-0 w-full bg-gray-800 bg-opacity-10 text-white p-4 flex justify-center items-center gap-40 z-50" id = "bot-ui">
+        <div>
+            <div class = "text-base">Based in London</div>
+            <div class = "test-sm text-gray-400">Born in tokyo</div>
+        </div>
+        <div>
+            <div class = "text-base">Design-driven</div>
+            <div class = "test-sm text-gray-400">creative agency</div>
+        </div>
+        <div>
+            <div class = "text-base">Branding, digital</div>
+            <div class = "test-sm text-gray-400">and communications</div>
+        </div>
+    </div>
+    <canvas class = "absolute" id="canvas"></canvas> 
+    <!--1st Page Title-->
+    <div class = "snap-mandatory snap-y overflow-y-scroll top-0 left-0 h-full w-full fixed overflow-hidden" id = "container" dir = "ltr">
+        <div class = "snap-start h-screen relative" id = "page1">
+            <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
+                <div class="text-7xl text-center text-white relative" id = "title-container">
+                    <div id = "title-1">私たちはブランドです</div>
+                    <div class = "relative transform translate-x-20" id = "title-2">集団の</div>
+                    <div class = "" id = "title-3">創造性</div>
+                </div>
+            </div>            
+        </div>
+        <div class="snap-start h-screen relative flex justify-center items-center" id="page2">
+            <div class="snap-mandatory snap-y overflow-y-scroll h-[400px] w-[700px] hover:scale-[105%] transition-transform duration-300 outline-none space-y-0 overflow-auto" id="slider-cover">
+                <div class="snap-start h-[400px] w-[700px] bg-indigo-500" id = "slide1" tabindex="0">
+                    <!-- Content for the first inner div -->
+                </div>
+                <div class="snap-start h-[400px] w-[700px] bg-sky-500 hover:scale-[105%]" id = "slide2" tabindex="1">
+                    <!-- Content for the second inner div -->
+                </div>
+                <div class="snap-start h-[400px] w-[700px] bg-cyan-500 hover:scale-[105%]" id = "slide3" tabindex="2">
+                    <!-- Content for the third inner div -->
+                </div>
+                <div class="snap-start h-[400px] w-[700px] bg-teal-500 hover:scale-[105%]" id = "slide4" tabindex="3">
+                    <!-- Content for the fourth inner div -->
+                </div>
+            </div>
+        </div>
+        <div class="relative grid grid-cols-10 snap-start h-5/6 bg-black text-white z-50" id = "page3">
+            <div class = "col-span-4 flex flex-col justify-center gap-4 ml-[6rem]">
+                <div class = "text-4xl">WE WOULD LOVE TO HEAR FROM YOU</div>
+                <div class = "text-xs text-gray-500">
+                    Feel free to reach out if you want to 
+                    collaborate with us, or simply have a chat
+                </div>
+                <div class = "text-lg text-gray-100 block">contact@monopo.london -></div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="dist/bundle.js"></script> -->
+    <!-- <script src="dist/js/canvas.bundle.js"></script> -->
+
+</body>
+</html>
